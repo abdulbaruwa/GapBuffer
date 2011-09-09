@@ -44,6 +44,12 @@
     <Compile Include="NoteDocument.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ToroDabEditorCore\ToroDabEditorCore.fsproj">
+      <Project>{26D786E3-3EA3-4425-B3FC-D00F8CF0CD7E}</Project>
+      <Name>ToroDabEditorCore</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

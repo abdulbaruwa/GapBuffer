@@ -5,13 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6870ebac-879d-45ab-a75e-c1c924953c06}</ProjectGuid>
+    <ProjectGuid>{8b5d6125-d313-4ef9-9c92-261acf37237d}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>FsharpConsoleApplication</RootNamespace>
-    <AssemblyName>FsharpConsoleApplication</AssemblyName>
+    <RootNamespace>GapBufferConsole</RootNamespace>
+    <AssemblyName>GapBufferConsole</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
-    <Name>FsharpConsoleApplication</Name>
+    <Name>GapBufferConsole</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
-    <DocumentationFile>bin\Debug\FsharpConsoleApplication.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\GapBufferConsole.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -32,7 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
-    <DocumentationFile>bin\Release\FsharpConsoleApplication.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\GapBufferConsole.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -42,8 +42,14 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GapBuffer_.fs" />
-    <Compile Include="GapBuffer.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ToroDabEditorCore\ToroDabEditorCore.fsproj">
+      <Name>ToroDabEditorCore</Name>
+      <Project>{26d786e3-3ea3-4425-b3fc-d00f8cf0cd7e}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />

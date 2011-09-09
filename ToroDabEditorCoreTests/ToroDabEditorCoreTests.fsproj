@@ -2,18 +2,17 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6870ebac-879d-45ab-a75e-c1c924953c06}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>FsharpConsoleApplication</RootNamespace>
-    <AssemblyName>FsharpConsoleApplication</AssemblyName>
+    <ProjectGuid>{0202990b-6278-4b10-9631-3255e1019f76}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ToroDabEditorCoreTests</RootNamespace>
+    <AssemblyName>ToroDabEditorCoreTests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
-    <Name>FsharpConsoleApplication</Name>
+    <Name>ToroDabEditorCoreTests</Name>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -21,18 +20,16 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
-    <DocumentationFile>bin\Debug\FsharpConsoleApplication.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\ToroDabEditorCoreTests.XML</DocumentationFile>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <Tailcalls>true</Tailcalls>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
-    <DocumentationFile>bin\Release\FsharpConsoleApplication.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\ToroDabEditorCoreTests.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -40,10 +37,24 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+    <Reference Include="xunit">
+      <HintPath>..\packages\xunit.1.8.0.1545\lib\xunit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GapBuffer_.fs" />
-    <Compile Include="GapBuffer.fs" />
+    <Compile Include="LineManagerTest.fs" />
+    <None Include="Script.fsx" />
+    <None Include="packages.config" />
+    <Compile Include="TextGapBufferText.fs" />
+    <Compile Include="DocumentTest.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ToroDabEditorCore\ToroDabEditorCore.fsproj">
+      <Name>ToroDabEditorCore</Name>
+      <Project>{26d786e3-3ea3-4425-b3fc-d00f8cf0cd7e}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
